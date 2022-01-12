@@ -26,3 +26,5 @@ showPrimeNumber(14,40); //manuel olarak bu değerler giriliyor.
 
 //console.log(process.argv); //projeyi çalıştırırken kullanılan paramtelreli içeren array
 
+module.exports = showPrimeNumber
+
