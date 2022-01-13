@@ -1,31 +1,27 @@
-const http = require('http');
+const express = require('express')  
 
-//web sunucu oluştururken request ve response objeleri kullanılr.
+const app = express()
 
-const server = http.createServer((req,res)=>{
+//get request olduğunu belirtiyor. 
+app.get('/',  (req, res) =>{
+  res.status(200).send('Hello World')
+})
 
-    const url = req.url;
+app.get('/about',  (req, res) =>{
+    res.status(200).send('about World')
+  })
 
-    if(url === '/about'){
-        res.write("<h2>About Page hoşgeldiniz <h2>");
-    }
-    else if(url ==='/'){
-        res.write("<h2>home Page hoşgeldiniz <h2>")
-    }
-    else{
-        res.write("<h2>Contact page hoşgeldiniz <h2>")
-    }
+  
+  app.get('/contact',  (req, res) =>{
+    res.status(200).send('contact World')
+  })
 
-    console.log('bir istek gönderildi');
-    res.end();
-});
+  app.get('*',(req,res)=>{
+      res.status(404).send("404 not found ")
+  })
+  
+const port =3000;
 
-//sunucu için kendi pcmiz kullanılacako yüzden hangi port olduğunu yazmalısın.
-
-//port bilgisi değişkene atanıyor
-const port =5000;
-
-server.listen(port,()=>{
-    console.log( `sunucu ${port} da başlatıldı`)
-});
-
+app.listen(port,()=>{
+    console.log(`Bağlantı ${port} üzerinden kuruldu`)
+})

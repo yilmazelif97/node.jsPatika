@@ -1,5 +1,24 @@
 {
+  "name": "node.jspatika",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yilmazelif97/node.jsPatika.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yilmazelif97/node.jsPatika/issues"
+  },
+  "homepage": "https://github.com/yilmazelif97/node.jsPatika#readme",
   "dependencies": {
-    "http": "^0.0.1-security"
-  }
+    "express": "^4.17.2",
+    "koa": "^2.13.4",
+    "koa-router": "^10.1.1"
+  },
+  "description": ""
 }
